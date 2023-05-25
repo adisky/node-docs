@@ -54,13 +54,14 @@ root         709  2.4  0.3 11215932 64484 ?      Ssl  Apr24 1110:20  \_ etcd --a
 root         383  0.0  0.0 720780 10420 ?        Sl   Apr24  11:32 /usr/local/bin/containerd-shim-runc-v2 -namespace k8s.io -id 5130859ffbc0e2b775d56f5c5b129c153317b572a1d76b7c590fd964a5c02cfa -address /run/containerd/containerd.sock
 65535        480  0.0  0.0    992     4 ?        Ss   Apr24   0:00  \_ /pause
 root         637  4.4  1.8 1069700 303460 ?      Ssl  Apr24 1968:05  \_ kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestri
-
-- check disk usage of containerd state and root dir
+```
+- check disk usage of containerd state and root dir, report if anything looks unusal.
 ```
 >> du -sh /var/lib/containerd/
 1.4G	/var/lib/containerd/
 >> du -sh /run/containerd
 930M	/run/containerd
 ```
+- To get more information about pod/CNI/container related configurations and status use [crictl](https://github.com/adisky/node-docs/blob/main/using-crictl.md).
 
 
